@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/echelon-test/static/css/main.d983a0f5.chunk.css",
+    "main.js": "/echelon-test/static/js/main.5f118e40.chunk.js",
+    "main.js.map": "/echelon-test/static/js/main.5f118e40.chunk.js.map",
+    "runtime-main.js": "/echelon-test/static/js/runtime-main.a674f066.js",
+    "runtime-main.js.map": "/echelon-test/static/js/runtime-main.a674f066.js.map",
+    "static/js/2.1e1c3f46.chunk.js": "/echelon-test/static/js/2.1e1c3f46.chunk.js",
+    "static/js/2.1e1c3f46.chunk.js.map": "/echelon-test/static/js/2.1e1c3f46.chunk.js.map",
+    "static/js/3.fc76ec06.chunk.js": "/echelon-test/static/js/3.fc76ec06.chunk.js",
+    "static/js/3.fc76ec06.chunk.js.map": "/echelon-test/static/js/3.fc76ec06.chunk.js.map",
+    "index.html": "/echelon-test/index.html",
+    "static/css/main.d983a0f5.chunk.css.map": "/echelon-test/static/css/main.d983a0f5.chunk.css.map",
+    "static/js/2.1e1c3f46.chunk.js.LICENSE.txt": "/echelon-test/static/js/2.1e1c3f46.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a674f066.js",
+    "static/js/2.1e1c3f46.chunk.js",
+    "static/css/main.d983a0f5.chunk.css",
+    "static/js/main.5f118e40.chunk.js"
+  ]
+}
