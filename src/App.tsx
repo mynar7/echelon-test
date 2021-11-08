@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { getClasses, trainingClass } from "./util/echelon";
+import Loading from "./components/loading";
+import ErrorMessage from "./components/error";
+import MainPage from "./pages/main";
 
 function App() {
+  const [classes, setClasses] = useState<trainingClass[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [errorLoading, setErrorLoading] = useState(false);
+
+  useEffect(() => {
+    getClasses().then((classData) => {
+      if (classData) setClasses(classData);
+      else setErrorLoading(true);
+      setLoading(false);
+    });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {loading ? (
+        <Loading />
+      ) : errorLoading ? (
+        <ErrorMessage />
+      ) : (
+        <MainPage classList={classes} />
+      )}
+    </>
   );
 }
 
