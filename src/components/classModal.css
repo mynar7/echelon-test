@@ -28,6 +28,10 @@
 .class-modal__content p {
   margin: 0 12px 12px;
 }
+.class-modal__content img {
+  width: 100%;
+  height: auto;
+}
 .class-modal--open {
   visibility: visible;
   opacity: 1;

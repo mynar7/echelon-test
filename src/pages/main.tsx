@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { trainingClass } from "../util/echelon";
 import ClassCard from "../components/classCard";
 import ClassModal from "../components/classModal";

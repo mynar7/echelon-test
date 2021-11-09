@@ -1,14 +1,14 @@
 .class-card {
   box-shadow: 4px 4px 8px 2px var(--shadow);
-  width: 300px;
   border: 1px solid var(--shadow);
+  cursor: pointer;
 }
 .class-card__title {
   margin-left: 6px;
   font-weight: 700;
 }
 .class-card__img {
-  width: 300px;
+  width: 100%;
   height: auto;
   display: block;
 }

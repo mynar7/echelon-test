@@ -1,9 +1,3 @@
-interface classData {
-  items: [trainingClass];
-  total: number;
-  page: number;
-  limit: number;
-}
 export type trainingClass = {
   id: number;
   name: string;
@@ -19,9 +13,11 @@ export type trainingClass = {
   createdAt: string;
   updatedAt: string;
 };
+
 function isClassList(obj: any): obj is [trainingClass] {
   return Array.isArray(obj as [trainingClass]);
 }
+
 async function getClasses(): Promise<trainingClass[] | false> {
   try {
     const response = await fetch(
