@@ -21,7 +21,7 @@ function ClassModal({
 
   return (
     <div
-      className={`class-modal column f-center ${
+      className={`class-modal column ${
         currentClass ? "class-modal--open" : ""
       }`}
       onClick={dismissModalFromMargin}

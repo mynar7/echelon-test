@@ -14,9 +14,11 @@
   transition: 200ms;
   text-align: center;
   box-sizing: border-box;
+  align-items: center;
 }
 
 .class-modal__content {
+  margin-top: 10%;
   background-color: var(--background-dark);
   box-shadow: var(--shadow) 4px 4px 12px 4px;
   max-width: 1000px;
