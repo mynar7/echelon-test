@@ -8,6 +8,7 @@ interface filters {
   [key: string]: boolean;
 }
 
+// returns a de-duped list of values from class object properties
 function getListOfFilters(name: string, classes: trainingClass[]) {
   return Array.from(
     classes.reduce(
@@ -16,7 +17,8 @@ function getListOfFilters(name: string, classes: trainingClass[]) {
     )
   ) as string[];
 }
-
+// creates an object with keys from list of possible property values
+// all values are set to false on creation
 function makeFilterDefaultState(names: string[]): { [key: string]: false } {
   const stateObj: { [key: string]: false } = {};
   return names.reduce((obj, name) => {
@@ -26,6 +28,7 @@ function makeFilterDefaultState(names: string[]): { [key: string]: false } {
 }
 
 function MainPage({ classList }: { classList: trainingClass[] }) {
+  // dynamically create menu options to filter based on API response
   const difficulties = getListOfFilters("level", classList);
   const defaultDifficultyState = makeFilterDefaultState(difficulties);
   const [difficultyFilters, setDifficultyFilters] = useState<filters>(
@@ -48,8 +51,10 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filterMenuIsOpen, setFilterMenuIsOpen] = useState(false);
+  // setting current class shows class modal, setting it to null hides the modal
   const [currentClass, setCurrentClass] = useState<trainingClass | null>(null);
 
+  // creates a checkboxHandler to map checkbox checking to state object
   function makeHandleCheckBox(
     stateObj: { [key: string]: boolean },
     setter: Function
@@ -58,13 +63,14 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
       setter({ ...stateObj, [e.target.name]: !stateObj[e.target.name] });
     };
   }
-
+  // filters list based on user's typed query
   function filterClassNames(classes: trainingClass[]): trainingClass[] {
     return classes.filter(({ name }) =>
       name.toLowerCase().includes(searchQuery.toLowerCase())
     );
   }
-
+  // a generic function that filters based on selected checkboxes mapped
+  // to an object with keys that are the checkbox name and values that are boolean
   function filterByOptions(
     optionName: string,
     filterObj: { [key: string]: boolean },
@@ -80,6 +86,7 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
     );
   }
 
+  // runs list of classes through all available filter methods
   function filterClasses(classList: trainingClass[]): trainingClass[] {
     const filteredByName = filterClassNames(classList);
     const filteredByDifficulty = filterByOptions(
@@ -112,13 +119,17 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
     )
       setFilterMenuIsOpen(false);
   }
+
   function clearFilters() {
     setSearchQuery("");
     setDifficultyFilters(defaultDifficultyState);
     setInstructorFilters(defaultInstructorState);
     setCategoryFilters(defaultCategoryState);
   }
+
+  // create filtered class list to render below
   const filteredClasses = filterClasses(classList);
+
   return (
     <div className="main-page" onClick={closeFilterMenu}>
       <h1 className="main-page__title">Echelon Classes</h1>

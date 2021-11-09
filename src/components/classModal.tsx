@@ -11,6 +11,7 @@ function ClassModal({
 }) {
   const modalContentRef = useRef<HTMLDivElement>(null);
 
+  // function to dismiss modal when user clicks outside of modal
   function dismissModalFromMargin(e: MouseEvent<HTMLElement>) {
     if (modalContentRef.current?.contains(e.target as HTMLElement)) return;
     dismissModal();
