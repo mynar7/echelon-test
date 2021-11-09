@@ -1,7 +1,14 @@
+import { Dispatch, SetStateAction } from "react";
 import { trainingClass } from "../util/echelon";
 import "./classCard.css";
 
-function ClassCard({ classInfo }: { classInfo: trainingClass }) {
+function ClassCard({
+  classInfo,
+  setCurrentClass,
+}: {
+  classInfo: trainingClass;
+  setCurrentClass: Dispatch<SetStateAction<trainingClass | null>>;
+}) {
   function getDifficultyEmoji(difficulty: string) {
     switch (difficulty) {
       case "Beginner":
@@ -15,7 +22,7 @@ function ClassCard({ classInfo }: { classInfo: trainingClass }) {
     }
   }
   return (
-    <div className="class-card">
+    <div className="class-card" onClick={() => setCurrentClass(classInfo)}>
       <p className="class-card__title">
         {getDifficultyEmoji(classInfo.level)} {classInfo.name}
       </p>

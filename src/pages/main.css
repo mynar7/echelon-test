@@ -1,7 +1,8 @@
 .main-page {
   min-height: 100vh;
   overflow-x: hidden;
-  margin-bottom: 32px;
+  padding-bottom: 32px;
+  box-sizing: border-box;
 }
 
 .main-page__title {
@@ -12,15 +13,18 @@
 .main-page__no-classes-msg {
   text-align: center;
 }
+
 .main-page__class-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
   gap: 16px;
 }
+
 .main-page__filter-controls {
   margin-bottom: 16px;
 }
+
 .filter-menu {
   box-sizing: border-box;
   padding: 48px 24px;
@@ -46,20 +50,11 @@
   visibility: visible;
 }
 
-.filter-menu__button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: initial;
-  border: none;
-  font-size: 2em;
-  color: var(--link-color);
-  cursor: pointer;
-}
 .filter-menu__filter-title {
   font-weight: 700;
   text-align: center;
 }
+
 .filter-menu__input-group {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));

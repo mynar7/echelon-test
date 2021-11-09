@@ -1,6 +1,7 @@
 import React, { ChangeEventHandler, useState, useRef } from "react";
 import { trainingClass } from "../util/echelon";
 import ClassCard from "../components/classCard";
+import ClassModal from "../components/classModal";
 import "./main.css";
 
 interface filters {
@@ -47,6 +48,7 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filterMenuIsOpen, setFilterMenuIsOpen] = useState(false);
+  const [currentClass, setCurrentClass] = useState<trainingClass | null>(null);
 
   function makeHandleCheckBox(
     stateObj: { [key: string]: boolean },
@@ -134,6 +136,7 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
           Clear
         </button>
       </div>
+      {/* Filter Menu */}
       <div
         ref={menuFilterRef}
         className={`filter-menu column ${
@@ -141,7 +144,7 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
         }`}
         aria-hidden={!filterMenuIsOpen}
       >
-        <button className="filter-menu__button" onClick={toggleFilterMenu}>
+        <button className="close-button" onClick={toggleFilterMenu}>
           &#10006;
         </button>
         <p className="filter-menu__filter-title">Difficulties</p>
@@ -207,15 +210,25 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
           </button>
         </div>
       </div>
+      {/* Card Container */}
       <div className="main-page__class-cards-container">
         {filteredClasses.length ? (
           filteredClasses.map((classInfo, index) => (
-            <ClassCard key={index} classInfo={classInfo} />
+            <ClassCard
+              key={index}
+              classInfo={classInfo}
+              setCurrentClass={setCurrentClass}
+            />
           ))
         ) : (
           <h2 className="main-page__no-classes-msg">No Classes Found</h2>
         )}
       </div>
+      {/* Modal */}
+      <ClassModal
+        currentClass={currentClass}
+        setCurrentClass={setCurrentClass}
+      />
     </div>
   );
 }

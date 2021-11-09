@@ -3,6 +3,7 @@
   --text-light: #eee;
   --link-color: hsl(188, 88%, 48%);
   --shadow: #e0e0e022;
+  --shadow-dark: #252525dd;
 }
 
 body {
@@ -39,10 +40,25 @@ body {
   align-items: center;
 }
 
+.f-space-around {
+  justify-content: space-around;
+}
+
 .button-as-link {
   border: none;
   text-decoration: underline;
   color: var(--link-color);
   background-color: initial;
+  cursor: pointer;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: initial;
+  border: none;
+  font-size: 2em;
+  color: var(--link-color);
   cursor: pointer;
 }
