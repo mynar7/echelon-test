@@ -20,6 +20,24 @@
   margin-bottom: 60px;
 }
 
+.main-page__filter-controls__search-container {
+  position: relative;
+}
+
+.main-page__filter-controls__searchbox:focus
+  + .main-page__filter-controls__searchbox-label {
+  bottom: 100%;
+  color: var(--text-light);
+}
+
+.main-page__filter-controls__searchbox-label {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: var(--text-dark);
+  transition: 100ms;
+}
+
 .filter-menu {
   box-sizing: border-box;
   padding: 48px 24px;

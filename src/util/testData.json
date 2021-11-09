@@ -1,0 +1,71 @@
+{
+	"total": 12477,
+	"page": 1,
+	"limit": 25,
+	"items": [
+		{
+			"_id": "608731718a8873108522dcfb",
+			"id": 18956,
+			"name": "Flex Trainer Advanced 30",
+			"desc": "",
+			"image": "https://cdn.reflectgateway.com/vidthumb/04262021085317PM-Untitled5.jpg",
+			"cat": "Getting started",
+			"inst": "Shelley Meredith",
+			"len": "00:30",
+			"level": "Advanced",
+			"product": "Flex Elliptical Trainer",
+			"sortOrder": 4,
+			"explicit": false,
+			"createdAt": "2021-04-26T21:32:33.000Z",
+			"updatedAt": "2021-04-26T21:32:33.000Z"
+		},
+		{
+			"_id": "608723ed8a8873108522dcfa",
+			"id": 18955,
+			"name": "Flex Trainer Beginner 10",
+			"desc": "",
+			"image": "https://cdn.reflectgateway.com/vidthumb/04262021083403PM-Untitled4.jpg",
+			"cat": "Getting started",
+			"inst": "Shelley Meredith",
+			"len": "00:10",
+			"level": "Beginner",
+			"product": "Flex Elliptical Trainer",
+			"sortOrder": 2,
+			"explicit": false,
+			"createdAt": "2021-04-26T20:34:53.000Z",
+			"updatedAt": "2021-04-26T20:34:53.000Z"
+		},
+		{
+			"_id": "60871dc38a8873108522dcf8",
+			"id": 18953,
+			"name": "Flex Trainer Intermediate 15",
+			"desc": "",
+			"image": "https://cdn.reflectgateway.com/vidthumb/04262021080825PM-Untitled2.jpg",
+			"cat": "Getting started",
+			"inst": "Nancy McCaffrey",
+			"len": "00:15",
+			"level": "Intermediate",
+			"product": "Flex Elliptical Trainer",
+			"sortOrder": 3,
+			"explicit": false,
+			"createdAt": "2021-04-26T20:08:35.000Z",
+			"updatedAt": "2021-04-26T20:08:35.000Z"
+		},
+		{
+			"_id": "60870c589fb7721053ef8f0f",
+			"id": 18950,
+			"name": "Flex Trainer Orientation 5",
+			"desc": "Learn the key features of your Flex Trainer",
+			"image": "https://cdn.reflectgateway.com/vidthumb/04272021013634PM-Untitled1.jpg",
+			"cat": "Getting started",
+			"inst": "Nancy McCaffrey",
+			"len": "00:05",
+			"level": "Beginner",
+			"product": "Flex Elliptical Trainer",
+			"sortOrder": 0,
+			"explicit": false,
+			"createdAt": "2021-04-26T18:54:17.000Z",
+			"updatedAt": "2021-04-26T18:54:17.000Z"
+		}
+	]
+}

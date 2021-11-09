@@ -126,13 +126,22 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
     <div className="main-page" onClick={closeFilterMenu}>
       <h1 className="main-page__title">Echelon Classes</h1>
       <div className="main-page__filter-controls row f-center">
-        <input
-          placeholder="Filter Class Names"
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          tabIndex={currentClass || filterMenuIsOpen ? -1 : 0}
-        />
+        <div className="main-page__filter-controls__search-container">
+          <input
+            className="main-page__filter-controls__searchbox"
+            type="text"
+            id="Search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            tabIndex={currentClass || filterMenuIsOpen ? -1 : 0}
+          />
+          <label
+            className="main-page__filter-controls__searchbox-label"
+            htmlFor="Search"
+          >
+            Search Classes
+          </label>
+        </div>
         <button
           tabIndex={currentClass || filterMenuIsOpen ? -1 : 0}
           className="button-as-link"

@@ -25,6 +25,7 @@ function ClassModal({
         currentClass ? "class-modal--open" : ""
       }`}
       onClick={dismissModalFromMargin}
+      aria-hidden={!currentClass}
     >
       <div ref={modalContentRef} className="class-modal__content column">
         <button onClick={dismissModal} className="close-button">

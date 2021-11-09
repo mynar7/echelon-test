@@ -1,6 +1,7 @@
 :root {
   --background-dark: #333;
   --text-light: #eee;
+  --text-dark: #333;
   --link-color: hsl(188, 88%, 48%);
   --shadow: #e0e0e022;
   --shadow-dark: #252525dd;

@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 // creates a checkboxHandler to map checkbox checking to state object
-type filter = { [key: string]: boolean };
+export type filter = { [key: string]: boolean };
 
 function makeHandleCheckBox(
   stateObj: { [key: string]: boolean },
