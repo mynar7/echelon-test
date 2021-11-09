@@ -1,7 +1,8 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef, MouseEvent } from "react";
 import { trainingClass } from "../util/echelon";
 import ClassCard from "../components/classCard";
 import ClassModal from "../components/classModal";
+import CheckboxGroup from "../components/checkboxGroup";
 import "./main.css";
 
 interface filters {
@@ -54,15 +55,6 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
   // setting current class shows class modal, setting it to null hides the modal
   const [currentClass, setCurrentClass] = useState<trainingClass | null>(null);
 
-  // creates a checkboxHandler to map checkbox checking to state object
-  function makeHandleCheckBox(
-    stateObj: { [key: string]: boolean },
-    setter: Function
-  ) {
-    return function handleCheckBox(e: React.ChangeEvent<HTMLInputElement>) {
-      setter({ ...stateObj, [e.target.name]: !stateObj[e.target.name] });
-    };
-  }
   // filters list based on user's typed query
   function filterClassNames(classes: trainingClass[]): trainingClass[] {
     return classes.filter(({ name }) =>
@@ -111,7 +103,7 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
     setFilterMenuIsOpen(!filterMenuIsOpen);
   }
 
-  function closeFilterMenu(e: React.MouseEvent<HTMLElement>) {
+  function closeFilterMenu(e: MouseEvent<HTMLElement>) {
     const elementClicked = e.target as HTMLElement;
     if (
       !menuFilterRef.current?.contains(elementClicked) &&
@@ -167,60 +159,24 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
         <button className="close-button" onClick={toggleFilterMenu}>
           &#10006;
         </button>
-        <p className="filter-menu__filter-title">Difficulties</p>
-        <div className="filter-menu__input-group">
-          {difficulties.map((difficulty, index) => (
-            <label key={index}>
-              {difficulty}
-              <input
-                type="checkbox"
-                name={difficulty}
-                value={difficulty}
-                checked={difficultyFilters[difficulty]}
-                onChange={makeHandleCheckBox(
-                  difficultyFilters,
-                  setDifficultyFilters
-                )}
-              />
-            </label>
-          ))}
-        </div>
-        <p className="filter-menu__filter-title">Instructors</p>
-        <div className="filter-menu__input-group">
-          {instructors.map((instructor, index) => (
-            <label key={index}>
-              {instructor}
-              <input
-                type="checkbox"
-                name={instructor}
-                value={instructor}
-                checked={instructorFilters[instructor]}
-                onChange={makeHandleCheckBox(
-                  instructorFilters,
-                  setInstructorFilters
-                )}
-              />
-            </label>
-          ))}
-        </div>
-        <p className="filter-menu__filter-title">Categories</p>
-        <div className="filter-menu__input-group">
-          {categories.map((category, index) => (
-            <label key={index}>
-              {category}
-              <input
-                type="checkbox"
-                name={category}
-                value={category}
-                checked={categoryFilters[category]}
-                onChange={makeHandleCheckBox(
-                  categoryFilters,
-                  setCategoryFilters
-                )}
-              />
-            </label>
-          ))}
-        </div>
+        <CheckboxGroup
+          groupName={"Difficulties"}
+          optionsList={difficulties}
+          optionsFilters={difficultyFilters}
+          setOptionsFilters={setDifficultyFilters}
+        />
+        <CheckboxGroup
+          groupName={"Instructors"}
+          optionsList={instructors}
+          optionsFilters={instructorFilters}
+          setOptionsFilters={setInstructorFilters}
+        />
+        <CheckboxGroup
+          groupName={"Categories"}
+          optionsList={categories}
+          optionsFilters={categoryFilters}
+          setOptionsFilters={setCategoryFilters}
+        />
         <div className="row f-center">
           <button onClick={clearFilters} className="button-as-link">
             Clear All

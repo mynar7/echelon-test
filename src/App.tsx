@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { getClasses, trainingClass } from "./util/echelon";
 import Loading from "./components/loading";
