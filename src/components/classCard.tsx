@@ -48,7 +48,9 @@ function ClassCard({
     <div
       className="class-card"
       tabIndex={preventTab ? -1 : 0}
-      onKeyUp={(e) => e.key === " " && setCurrentClass(classInfo)}
+      onKeyUp={(e) =>
+        (e.key === " " || e.key === "Enter") && setCurrentClass(classInfo)
+      }
       onClick={() => setCurrentClass(classInfo)}
     >
       <p className="class-card__title">
