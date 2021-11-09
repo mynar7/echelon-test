@@ -12,13 +12,34 @@ function ClassCard({
   function getDifficultyEmoji(difficulty: string) {
     switch (difficulty) {
       case "Beginner":
-        return "💚";
+        return (
+          <span
+            style={{ animationDuration: "1s" }}
+            className="class-card__heartbeat"
+          >
+            💚
+          </span>
+        );
       case "Intermediate":
-        return "💛";
+        return (
+          <span
+            style={{ animationDuration: "800ms" }}
+            className="class-card__heartbeat"
+          >
+            💛
+          </span>
+        );
       case "Advanced":
-        return "❤️";
+        return (
+          <span
+            style={{ animationDuration: "600ms" }}
+            className="class-card__heartbeat"
+          >
+            ❤️
+          </span>
+        );
       default:
-        return "⚪";
+        return <span>⚪</span>;
     }
   }
   return (
