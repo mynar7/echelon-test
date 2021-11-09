@@ -1,13 +1,19 @@
 .main-page {
   min-height: 100vh;
   overflow-x: hidden;
-  padding-bottom: 32px;
+  padding: 60px 0;
   box-sizing: border-box;
 }
 
 .main-page__title {
   margin-top: 0;
   text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .main-page__title {
+    font-size: 3em;
+  }
 }
 
 .main-page__no-classes-msg {
@@ -24,14 +30,14 @@
 }
 
 .main-page__filter-controls {
-  margin-bottom: 16px;
+  margin-bottom: 60px;
 }
 
 .filter-menu {
   box-sizing: border-box;
   padding: 48px 24px;
   position: fixed;
-  overflow-y: scroll;
+  overflow-y: auto;
   right: 0;
   top: 0;
   bottom: 0;
