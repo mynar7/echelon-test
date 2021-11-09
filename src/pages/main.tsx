@@ -1,6 +1,6 @@
 import { useState, useRef, MouseEvent } from "react";
 import { trainingClass } from "../util/echelon";
-import ClassCard from "../components/classCard";
+import ClassCardContainer from "../components/classCardContainer";
 import ClassModal from "../components/classModal";
 import CheckboxGroup from "../components/checkboxGroup";
 import "./main.css";
@@ -166,12 +166,14 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
           setOptionsFilters={setDifficultyFilters}
         />
         <CheckboxGroup
+          sort={true}
           groupName={"Instructors"}
           optionsList={instructors}
           optionsFilters={instructorFilters}
           setOptionsFilters={setInstructorFilters}
         />
         <CheckboxGroup
+          sort={true}
           groupName={"Categories"}
           optionsList={categories}
           optionsFilters={categoryFilters}
@@ -187,19 +189,10 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
         </div>
       </div>
       {/* Card Container */}
-      <div className="main-page__class-cards-container">
-        {filteredClasses.length ? (
-          filteredClasses.map((classInfo, index) => (
-            <ClassCard
-              key={index}
-              classInfo={classInfo}
-              setCurrentClass={setCurrentClass}
-            />
-          ))
-        ) : (
-          <h2 className="main-page__no-classes-msg">No Classes Found</h2>
-        )}
-      </div>
+      <ClassCardContainer
+        classList={filteredClasses}
+        setCurrentClass={setCurrentClass}
+      />
       {/* Modal */}
       <ClassModal
         currentClass={currentClass}

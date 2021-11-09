@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { getClasses, trainingClass } from "./util/echelon";
 import Loading from "./components/loading";
 import ErrorMessage from "./components/error";
 import MainPage from "./pages/main";
+import "./App.css";
 
 function App() {
   const [classes, setClasses] = useState<trainingClass[]>([]);

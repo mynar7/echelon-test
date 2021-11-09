@@ -12,16 +12,19 @@ function makeHandleCheckBox(
 }
 
 function CheckboxGroup({
+  sort = false,
   groupName,
   optionsList,
   optionsFilters,
   setOptionsFilters,
 }: {
+  sort?: boolean;
   groupName: string;
   optionsList: string[];
   optionsFilters: filter;
   setOptionsFilters: Dispatch<SetStateAction<filter>>;
 }) {
+  if (sort) optionsList.sort();
   return (
     <>
       <p className="filter-menu__filter-title">{groupName}</p>

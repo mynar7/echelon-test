@@ -16,19 +16,6 @@
   }
 }
 
-.main-page__no-classes-msg {
-  text-align: center;
-}
-
-.main-page__class-cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  justify-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin: 0 16px;
-}
-
 .main-page__filter-controls {
   margin-bottom: 60px;
 }
