@@ -15,6 +15,7 @@
 .class-card__heartbeat {
   display: inline-block;
 }
+.class-card:focus .class-card__heartbeat,
 .class-card:hover .class-card__heartbeat {
   animation: heartbeat 1s infinite forwards ease-in-out;
 }

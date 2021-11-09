@@ -4,8 +4,10 @@ import "./classCard.css";
 
 function ClassCard({
   classInfo,
+  preventTab,
   setCurrentClass,
 }: {
+  preventTab: boolean;
   classInfo: trainingClass;
   setCurrentClass: Dispatch<SetStateAction<trainingClass | null>>;
 }) {
@@ -43,7 +45,12 @@ function ClassCard({
     }
   }
   return (
-    <div className="class-card" onClick={() => setCurrentClass(classInfo)}>
+    <div
+      className="class-card"
+      tabIndex={preventTab ? -1 : 0}
+      onKeyUp={(e) => e.key === " " && setCurrentClass(classInfo)}
+      onClick={() => setCurrentClass(classInfo)}
+    >
       <p className="class-card__title">
         {getDifficultyEmoji(classInfo.level)} {classInfo.name}
       </p>

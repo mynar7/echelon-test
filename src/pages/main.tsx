@@ -131,17 +131,17 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          tabIndex={currentClass ? -1 : 0}
+          tabIndex={currentClass || filterMenuIsOpen ? -1 : 0}
         />
         <button
-          tabIndex={currentClass ? -1 : 0}
+          tabIndex={currentClass || filterMenuIsOpen ? -1 : 0}
           className="button-as-link"
           onClick={toggleFilterMenu}
         >
           Show Filters
         </button>
         <button
-          tabIndex={currentClass ? -1 : 0}
+          tabIndex={currentClass || filterMenuIsOpen ? -1 : 0}
           className="button-as-link"
           onClick={clearFilters}
         >
@@ -191,6 +191,7 @@ function MainPage({ classList }: { classList: trainingClass[] }) {
       {/* Card Container */}
       <ClassCardContainer
         classList={filteredClasses}
+        preventTabbingOnCards={!!(currentClass || filterMenuIsOpen)}
         setCurrentClass={setCurrentClass}
       />
       {/* Modal */}

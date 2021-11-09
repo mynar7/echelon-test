@@ -5,9 +5,11 @@ import "./classCardContainer.css";
 
 function ClassCardContainer({
   classList,
+  preventTabbingOnCards,
   setCurrentClass,
 }: {
   classList: trainingClass[];
+  preventTabbingOnCards: boolean;
   setCurrentClass: Dispatch<SetStateAction<trainingClass | null>>;
 }) {
   return (
@@ -17,6 +19,7 @@ function ClassCardContainer({
           <ClassCard
             key={index}
             classInfo={classInfo}
+            preventTab={preventTabbingOnCards}
             setCurrentClass={setCurrentClass}
           />
         ))
