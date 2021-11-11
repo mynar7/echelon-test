@@ -25,7 +25,10 @@
 }
 
 .main-page__filter-controls__searchbox:focus
+  + .main-page__filter-controls__searchbox-label,
+.main-page__filter-controls__searchbox:not([value=""])
   + .main-page__filter-controls__searchbox-label {
+  bottom: 100%;
   bottom: 100%;
   color: var(--text-light);
 }
