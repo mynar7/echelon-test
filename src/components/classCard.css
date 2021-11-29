@@ -14,6 +14,7 @@
 }
 .class-card__heartbeat {
   display: inline-block;
+  font-weight: initial;
 }
 .class-card:focus .class-card__heartbeat,
 .class-card:hover .class-card__heartbeat {
